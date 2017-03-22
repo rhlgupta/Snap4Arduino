@@ -505,6 +505,15 @@ IDE_Morph.prototype.applySavedSettings = function () {
 };
 
 IDE_Morph.prototype.originalProjectMenu = IDE_Morph.prototype.projectMenu;
+
+IDE_Morph.prototype.importUpdatedBlocks = function () {
+	this.droppedText(
+                this.getURL(this.resourceURL('UpdatedBlocks.xml')),  // need to add UpdatedBlocks.xml in directory
+                'tools'
+            );
+
+};
+
 IDE_Morph.prototype.projectMenu = function () {
     var menu,
         myself = this,
@@ -1277,6 +1286,7 @@ IDE_Morph.prototype.createCategories = function () {
     });
     fixCategoriesLayout();
     this.add(this.categories);
+    this.importUpdatedBlocks ();
 };
 
 // Show URL of public projects in project list
