@@ -22,7 +22,7 @@ Arduino.prototype.attemptConnection = function () {
                         myself.networkDialog();
                     });
                 }
-                if (networkPortsEnabled || portCount > 1) {
+                if (networkPortsEnabled || portCount >= 1) {
                     portMenu.popUpAtHand(world);
                 } else if (!networkPortsEnabled && portCount === 1) {
                     myself.connect(ports[0]);
